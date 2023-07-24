@@ -16,12 +16,11 @@ body {
 #mainimg {
   width: 200px;
 }
-
-#buttonmain2, #btnlogin {
-  display: inline-block;
-  background-color: #838F79;
-  color: black;
-  text-decoration: none;
+#buttonmain2,#buttonmain1,#startquiz,#LogOut{
+  display:inline-block;
+  background-color:#838F79;
+  color:black;
+  text-decoration:none;
   border: none;
   border-radius: 5px;
   margin-left: 2%;
@@ -30,10 +29,19 @@ body {
   width: 80px;
   height: 40px; /* "PX" should be in lowercase */
 }
+#LogOut:hover {
+  background-color:#454D3B;
+}
+#startquiz:hover {
+  background-color:#454D3B;
+}
+#buttonmain2:hover {
+  background-color:#454D3B;
+}
 
-#buttonmain2:hover,
-#btnlogin:hover {
-  background-color: #454D3B;
+
+#buttonmain1:hover {
+  background-color:#454D3B;
 }
 
 /* It's better to group the hover and active states together */
@@ -77,5 +85,8 @@ body {
     margin-left: 10%;
     width: 100px;
     margin-top: 20%;
-  }
+  
+}}
+.hide {
+  display: none;
 }

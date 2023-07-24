@@ -11,6 +11,7 @@
     margin: 20px;
     height: 100vh;
     text-align: center;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
 
@@ -50,8 +51,7 @@
   
   .field {
     width: 48%; 
-    margin-bottom: 15px;
-
+    margin-bottom: 5px;
   }
   
   .field.f2 {
@@ -84,6 +84,7 @@
     background: linear-gradient(#3f3f3f,#414040);
     width: 100%;
   }
+  
   
   input:focus{
     color: #111311;
@@ -214,13 +215,13 @@ button:hover{
   /* Media Queries */
   @media screen and (max-width: 768px) {
     form {
-      width: 90%; /* Adjust the form width for smaller screens */
+      width: 90%; 
     }
   }
   
   @media screen and (max-width: 480px) {
     form {
-      width: 100%; /* Further adjust the form width for smaller screens */
+      width: 100%; 
     }
   
     label,
@@ -229,4 +230,6 @@ button:hover{
       font-size: 16px;
     }
   }
-  
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}  

@@ -92,34 +92,48 @@ function login() {
 
 
     let storedUserData = JSON.parse(localStorage.getItem('userData'));
-
+    
     
     if (storedUserData) {
         
         if (email === storedUserData.Email && password === storedUserData.Password) {
-            alert('done')
+            // alert('login succesfull')
             return true
-        } else {
+        }
+         else {
             alert('Invalid email or password.');
             return false
         }
-    } else {
+            } 
+            else {
         alert('No user data found. Please register first.');
         return false
     }
     
+
+    
 }
 
 // login btn navgate to homepage
-let buttonlogin = document.querySelector("#btnlogin");
 
+
+let buttonlogin = document.querySelector("#btnlogin");
+let isloged = false;
 buttonlogin.addEventListener('click', (event) => {
     event.preventDefault();
     if (!login()) {
-       
+        isloged = false;
         console.log("Login failed.");
     } else {
+        isloged=true;
+        localStorage.setItem("isloged",JSON.stringify(isloged))
         console.log("login succes");
         window.location.href = "../index.html";
     }
 });
+
+
+
+
+
+      
