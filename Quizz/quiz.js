@@ -60,86 +60,132 @@ if (quizPosition === 'html'){
         correct: "File server",
     }
     
-];} else if (quizPosition === 'css'){
-quizArray = [
-    {
-        id: "0",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    },
-    {
-        id: "1",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    },
-    {
-        id: "2",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    },
-    {
-        id: "3",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    },
-    {
-        id: "4",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    },
-    {
-        id: "5",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    }
-
-];}
-else if (quizPosition === 'js'){
+];} 
+else if (quizPosition === 'css'){
     quizArray = [
        {
            id: "0",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
+           question: " What does CSS stand for?",
+           options: ["Computer Style Sheets", "Creative Style Sheets", "Colorful Style Sheets", "Cascading Style Sheets  "],
+           correct: "Cascading Style Sheets",
        },
+
        {
-           id: "1",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
+        id: "1",
+        question: "What is the correct HTML for referring to an external style sheet? ",
+        options: [`<link rel="stylesheet" type="text/css" href="mystyle.css">  `, `<style src="mystyle.css">`, `<stylesheet>mystyle.css</stylesheet>`, `none`],
+        correct: `<link rel="stylesheet" type="text/css" href="mystyle.css">`,
        },
+
+
        {
-           id: "2",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
+        id: "2",
+        question: "  Where in an HTML document is the correct place to refer to an external style sheet?",
+        options: ["At the end of the document", "In the <head> section  ", "In the <body> section","none"],
+        correct: "In the <head> section",
        },
+      
        {
-           id: "3",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
+        id: "3",
+        question: " Which HTML attribute is used to define inline styles?",
+        options: ["class", "style", "font", "styles"],
+        correct: "style",
        },
+
        {
-           id: "4",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
+        id: "4",
+        question: " Which is the correct CSS syntax?",
+        options: ["body:color=black;", "body {color: black;} ", "{body;color:black;}", "{body:color=black;}"],
+        correct: "body {color: black;}",
        },
+
        {
-           id: "5",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
+        id: "5",
+        question: " Which CSS property is used to change the text color of an element? ",
+        options: ["fgcolor", "text-color", "color","none"],
+        correct: "color",
+       },
+
+       {
+        id: "6",
+           question: "What is the correct CSS syntax for making all the <p> elements bold? ",
+           options: [`<p style="text-size:bold;">`, `p {text-size:bold;}`, `p {font-weight:bold;}     
+           `, `<p style="font-size:bold;"></p>
+           `],
+           correct: "p {font-weight:bold;}",
+       },
+    
+       {
+        id: "7",
+           question: "How do you make each word in a text start with a capital letter?",
+           options: ["You can't do that with CSS", "text-transform:capitalize  ", "transform:capitalize", "text-style:capitalize"],
+           correct: "text-transform:capitalize",
+       },
+
+       {
+        id: "8",
+           question: ` How do you display a border like this:
+
+           The top border = 10 pixels
+           The bottom border = 5 pixels
+           The left border = 20 pixels
+           The right border = 1pixel?`,
+           options: ["border-width:10px 20px 5px 1px;", "border-width:10px 5px 20px 1px;", "border-width:10px 1px 5px 20px; ", "border-width:5px 20px 10px 1px"],
+           correct: "border-width:10px 1px 5px 20px;",
+       },
+ 
+
+
+       {
+        id: "9",
+           question: " What is the default value of the position property? ",
+           options: ["static", "fixed", "relative", "absolute"],
+           correct: "static",
        }
+    ];}
+       else if (quizPosition === 'js'){
+        quizArray = [
+            {
+                id: "0",
+                question: "HTML STANDS FOR ",
+                options: ["HYP", "Mandarin", "English", "German"],
+                correct: "Hyper Markup Language",
+            },
+            {
+                id: "1",
+                question: "HTML STANDS FOR ",
+                options: ["HYP", "Mandarin", "English", "German"],
+                correct: "Hyper Markup Language",
+            },
+            {
+                id: "2",
+                question: "HTML STANDS FOR ",
+                options: ["HYP", "Mandarin", "English", "German"],
+                correct: "Hyper Markup Language",
+            },
+            {
+                id: "3",
+                question: "HTML STANDS FOR ",
+                options: ["HYP", "Mandarin", "English", "German"],
+                correct: "Hyper Markup Language",
+            },
+            {
+                id: "4",
+                question: "HTML STANDS FOR ",
+                options: ["HYP", "Mandarin", "English", "German"],
+                correct: "Hyper Markup Language",
+            },
+            {
+                id: "5",
+                question: "HTML STANDS FOR ",
+                options: ["HYP", "Mandarin", "English", "German"],
+                correct: "",
+            }
+        
+        ];}
+  
    
-   ];}
+  
 
 //Restart Quiz
 restart.addEventListener("click", () => {
