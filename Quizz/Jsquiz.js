@@ -60,46 +60,8 @@ if (quizPosition === 'html'){
         correct: "File server",
     }
     
-];} else if (quizPosition === 'css'){
- quizArray = [
-    {
-        id: "0",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    },
-    {
-        id: "1",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    },
-    {
-        id: "2",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    },
-    {
-        id: "3",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    },
-    {
-        id: "4",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    },
-    {
-        id: "5",
-        question: "HTML STANDS FOR ",
-        options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Hyper Markup Language",
-    }
-
 ];}
+
 else if (quizPosition === 'js'){
     quizArray = [
        {
