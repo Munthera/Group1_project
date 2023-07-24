@@ -1,5 +1,4 @@
-
-    let buttonlogin = document.querySelector("#buttonmain1");
+let buttonlogin = document.querySelector("#buttonmain1");
     let startquiz = document.querySelector("#startquiz");
     let LogOut= document.querySelector("#LogOut");
     let welc= document.querySelector('#welcome');
@@ -40,4 +39,10 @@
         skill.textContent = `We are excited to discover your skills in(${userData.position}),The exam comprises 5 questions, with only 10 seconds for each response.!`
 
     }
-        
+    startquiz.addEventListener('click', _ => {
+        window.location.href = "./Quizz/quiz.html";
+    });
+    
+   LogOut.addEventListener('click', _ => {
+        window.location.href = "./index.html";
+    });

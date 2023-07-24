@@ -21,7 +21,7 @@ let count = 11;
 let countdown;
 var quizArray = []
 //Questions html / css / js
-if (quizPosition === 'html'){
+if ('html' === 'html'){
      quizArray = [
     {
         id: "0",
@@ -62,83 +62,17 @@ if (quizPosition === 'html'){
     
 ];}
 
-else if (quizPosition === 'js'){
-    quizArray = [
-       {
-           id: "0",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
-       },
-       {
-           id: "1",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
-       },
-       {
-           id: "2",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
-       },
-       {
-           id: "3",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
-       },
-       {
-           id: "4",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
-       },
-       {
-           id: "5",
-           question: "HTML STANDS FOR ",
-           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
-           correct: "Hyper Markup Language",
-       }
-   
-   ];}
-
 //Restart Quiz
 restart.addEventListener("click", () => {
-    initial();
-    displayContainer.classList.remove("hide");
-    scoreContainer.classList.add("hide");
+   
+
+ window.location.href = "../index.html";
+
 });
 
-//Next Button
-nextBtn.addEventListener(
-    "click",
-    (displayNext = () => {
-        //increment questionCount
-        questionCount += 1;
-        //if last question
-        if (questionCount == quizArray.length) {
-            //hide question container and display score
-            displayContainer.classList.add("hide");
-            scoreContainer.classList.remove("hide");
-            //user score
-            userScore.innerHTML =
-                "Your score is " + scoreCount + " out of " + questionCount;
-        } else {
-            //display questionCount
-            countOfQuestion.innerHTML =
-                questionCount + 1 + " of " + quizArray.length + " Question";
-            //display quiz
-            quizDisplay(questionCount);
-            count = 11;
-            clearInterval(countdown);
-            timerDisplay();
-        }
-    })
-);
 
 //Timer
-const timerDisplay = () => {
+let timerDisplay = () => {
     countdown = setInterval(() => {
         count--;
         timeLeft.innerHTML = `${count}s`;
@@ -150,15 +84,16 @@ const timerDisplay = () => {
 };
 
 //Display quiz
-const quizDisplay = (questionCount) => {
+let quizDisplay = (questionCount) => {
     let quizCards = document.querySelectorAll(".container-mid");
-    //Hide other cards
-    quizCards.forEach((card) => {
-        card.classList.add("hide");
-    });
-    //display current question card
+    // Hide the previous question card
+    if (questionCount > 0) {
+        quizCards[questionCount - 1].classList.add("hide");
+    }
+    // Show the current question card
     quizCards[questionCount].classList.remove("hide");
 };
+
 let selectedOption = null;
 //Quiz Creation
 function quizCreator() {
@@ -180,15 +115,19 @@ function quizCreator() {
         div.appendChild(question_DIV);
         //options
         div.innerHTML += `
-    <button class="option-div" onclick="checker(this)">${i.options[0]}</button>
-     <button class="option-div" onclick="checker(this)">${i.options[1]}</button>
-      <button class="option-div" onclick="checker(this)">${i.options[2]}</button>
-       <button class="option-div" onclick="checker(this)">${i.options[3]}</button>
-    `;
+            <button class="option-div" onclick="checker(this)">${i.options[0]}</button>
+            <button class="option-div" onclick="checker(this)">${i.options[1]}</button>
+            <button class="option-div" onclick="checker(this)">${i.options[2]}</button>
+            <button class="option-div" onclick="checker(this)">${i.options[3]}</button>
+        `;
         quizContainer.appendChild(div);
     }
     nextBtn.disabled = true;
+
+    // Show the first question card
+    quizDisplay(0);
 }
+
 
 //Checker Function to check if option is correct or not
 // Disable the "Next" button initially
@@ -229,74 +168,75 @@ function checker(userOption) {
     clearInterval(countdown);
   }
 // check result page if it displayed or not
-  let resultDisplayed = false;
-  nextBtn.addEventListener(
-    "click",
-    (displayNext = () => {
-      selectedOption = null;
-  
-      nextBtn.disabled = true;
+let resultDisplayed = false;
 
-      let question = document.getElementsByClassName("container-mid")[questionCount];
-      let options = question.querySelectorAll(".option-div");
-      options.forEach((element) => {
+nextBtn.addEventListener("click", () => {
+    selectedOption = null;
+    nextBtn.disabled = true;
+
+    let question = document.getElementsByClassName("container-mid")[questionCount];
+    let options = question.querySelectorAll(".option-div");
+
+    options.forEach((element) => {
         element.disabled = false;
-      });
-       // Check if it's the last question
+        element.classList.remove("correct", "incorrect"); // Reset the classes for the options
+    });
+
+    // Check if it's the last question
     if (questionCount == quizArray.length - 1) {
-      // hide question container and display score
-      displayContainer.classList.add("hide");
-      scoreContainer.classList.remove("hide");
-      // user score
-      userScore.innerHTML =
-        "Your score is " + scoreCount + " out of " + quizArray.length + " questions";
+        // Hide the question container and display the score
+        displayContainer.classList.add("hide");
+        scoreContainer.classList.remove("hide");
 
-      // Display the result page only if it hasn't been displayed before
-      if (!resultDisplayed) {
-        let resultContainer = document.createElement("div");
-        resultContainer.classList.add("result-container");
+        // Display the user score
+        userScore.innerHTML =
+            "Your score is " + scoreCount + " out of " + quizArray.length + " questions";
 
-        for (let i = 0; i < quizArray.length; i++) {
-          let questionDiv = document.createElement("div");
-          questionDiv.classList.add("result-question");
+        // Display the result page only if it hasn't been displayed before
+        if (!resultDisplayed) {
+            let resultContainer = document.createElement("div");
+            resultContainer.classList.add("result-container");
 
-          let questionNumber = document.createElement("p");
-          questionNumber.classList.add("result-question-number");
-          questionNumber.innerText = "Question " + (i + 1) + ":";
-          questionDiv.appendChild(questionNumber);
+            for (let i = 0; i < quizArray.length; i++) {
+                let questionDiv = document.createElement("div");
+                questionDiv.classList.add("result-question");
 
-          let questionText = document.createElement("p");
-          questionText.classList.add("result-question-text");
-          questionText.innerText = quizArray[i].question;
-          questionDiv.appendChild(questionText);
+                let questionNumber = document.createElement("p");
+                questionNumber.classList.add("result-question-number");
+                questionNumber.innerText = "Question " + (i + 1) + ":";
+                questionDiv.appendChild(questionNumber);
 
-          let correctAnswer = document.createElement("p");
-          correctAnswer.classList.add("result-correct-answer");
-          correctAnswer.innerText = "Correct Answer: " + quizArray[i].correct;
-          questionDiv.appendChild(correctAnswer);
+                let questionText = document.createElement("p");
+                questionText.classList.add("result-question-text");
+                questionText.innerText = quizArray[i].question;
+                questionDiv.appendChild(questionText);
 
-          resultContainer.appendChild(questionDiv);
+                let correctAnswer = document.createElement("p");
+                correctAnswer.classList.add("result-correct-answer");
+                correctAnswer.innerText = "Correct Answer: " + quizArray[i].correct;
+                questionDiv.appendChild(correctAnswer);
+
+                resultContainer.appendChild(questionDiv);
+            }
+
+            scoreContainer.appendChild(resultContainer);
+            resultDisplayed = true; // Set the flag to true to indicate that the result page has been displayed
         }
-
-        scoreContainer.appendChild(resultContainer);
-        resultDisplayed = true; // Set the flag to true to indicate that the result page has been displayed
-      }
     } else {
         // Clear the selected option before displaying the next question
         selectedOption = null;
-  
-        // ... Your existing code ...
-  
-        // Increment questionCount to display the next question
         questionCount += 1;
-  
-        // ... Your existing code ...
-  
+        countOfQuestion.innerHTML = questionCount + 1 + " of " + quizArray.length + " Question";
+        quizDisplay(questionCount);
+        count = 11;
+        clearInterval(countdown);
+        timerDisplay();
+
         // Disable the Next button again until the user selects an answer
         nextBtn.disabled = true;
-      }
-    })
-  );
+    }
+});
+
  
 //initial setup
 function initial() {

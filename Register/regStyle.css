@@ -15,20 +15,21 @@
     align-items: center;
     justify-content: center;
 
-  }
-  .login-form{
+ }
 
-    overflow: hidden;
-    height: 100vh;
-  }
-  
-  h1 {
-    justify-content: center;
-    text-align: center;
-    margin-top: 0%;
-    margin-left: 25%;
-    position: absolute;
-    /* padding-top: 20px; */
+ .login-form {
+
+   overflow: hidden;
+   height: 100vh;
+ }
+
+ h1 {
+   justify-content: center;
+   text-align: center;
+   margin-top: -3%;
+   margin-left: 25%;
+   position: absolute;
+   /* padding-top: 20px; */
 
   }
   
@@ -97,131 +98,157 @@
     0%{
      border-color: #eaeaea;
      box-shadow: 0 0 5px rgba(96, 97, 96, 0.2),
-                 inset 0 0 5px rgba(0,0,0,.1);
+       inset 0 0 5px rgba(0, 0, 0, .1);
    }
-    100%{
+
+   100% {
      border-color: rgb(239, 245, 239);
      box-shadow: 0 0 20px rgba(240, 242, 240, 0.6),
-                 inset 0 0 10px rgba(242, 244, 242, 0.4);
-   } 
+       inset 0 0 10px rgba(242, 244, 242, 0.4);
+   }
  }
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #0f0e0e
-    
-  }
-  
-  
+
+ label {
+   display: block;
+   margin-bottom: 5px;
+   font-weight: bold;
+   color: #0f0e0e
+ }
+
+
  input[type="text"],
  input[type="date"],
  input[type="email"],
  input[type="password"],
  input[type="tel"] {
-     width: 100%;
-     padding: 10px;
-     margin-bottom: 15px;
-     border: 1px solid #666;
-     border-radius: 4px;
-     box-sizing: border-box;
-     background-color: #555;
-     background: #D8D8D6;
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 15px;
+   border: 1px solid #666;
+   border-radius: 4px;
+   box-sizing: border-box;
+   background-color: #555;
+   background: #D8D8D6;
  }
 
  input[type="text"]:focus,
  input[type="date"]:focus,
- input[type="email"]:focus{
-     color: aliceblue;
+ input[type="email"]:focus {
+   color: rgb(10, 11, 12);
  }
+
  input[type="password"]:focus,
  input[type="tel"]:focus {
-     outline: none;
-     color: #fff;
-    
+   outline: none;
+   color: #fff;
+
  }
-  
- button{
-  
-  border-radius: 10px!important;
-  font-weight: 600;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-}
-button:hover{
-  color: #eef0ee;
-  /* border: 1px solid #e1ede1; */
-  box-shadow: 0 5PX 5px rgba(251, 251, 251, 0.3),
-              0 0 10px rgba(252, 254, 252, 0.2),
-              0 0 15px rgba(255, 255, 255, 0.1),
-              0 2px 0 black;
-              transition: all 0.5;
-}
-/* selector */
-.field select {
-  justify-content: center;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #666;
-  border-radius: 4px;
-  box-sizing: border-box;
-  background-color: #555;
-  background: linear-gradient(#3f3f3f,#414040);
-  color: #fff; 
-}
 
-.field select:focus {
-  outline: none;
-  color: #fff;
-  border-color: rgb(246, 246, 249);
-}
+ button {
 
-.field select::-ms-expand {
-  display: none; 
-}
+   border-radius: 10px !important;
+   font-weight: 600;
+   letter-spacing: 1px;
+   cursor: pointer;
+ }
 
-.field select::after {
-  content: '\25BC'; 
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  color: #fff;
-  pointer-events: none; 
-}
+ /* ::-webkit-calendar-picker-indicator {
+    filter: invert(2);
+} */
+ button:hover {
+   color: #eef0ee;
+   /* border: 1px solid #e1ede1; */
+   box-shadow: 0 5PX 5px rgba(251, 251, 251, 0.3),
+     0 0 10px rgba(252, 254, 252, 0.2),
+     0 0 15px rgba(255, 255, 255, 0.1),
+     0 2px 0 black;
+   transition: all 0.5;
+ }
 
-/* Style for options */
-.field select option {
-  background-color: #555;
-  color: #fff;
-}
-  
-  .link{
+ /* selector */
+ .field select {
+   justify-content: center;
+   font-weight: bold;
+   letter-spacing: 0.1em;
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 15px;
+   border: 1px solid #666;
+   border-radius: 4px;
+   box-sizing: border-box;
+   background: #D8D8D6;
+   color: #959B8C;
+ }
+
+ .field select:focus {
+   outline: none;
+   color: #070707;
+   border-color: rgb(246, 246, 249);
+ }
+
+ .field select::-ms-expand {
+   display: none;
+ }
+
+ .field select::after {
+   content: '\25BC';
+   position: absolute;
+   top: 50%;
+   right: 15px;
+   transform: translateY(-50%);
+   color: #fff;
+   pointer-events: none;
+ }
+
+/* 
+ .position {
+   width: 100px;
+   padding: 10px;
+   font-size: 15px;
+ }
+
+ option::[disabled]:first-child {
+   color: black;
+ } */
+
+
+
+
+
+
+
+
+
+ /* Style for options */
+ .field select option {
+   background-color: #555;
+   color: #fff;
+ }
+
+ .link {
    margin-top: 25px;
    color: #414040;
    font-weight: 700;
-}
-  .link a{
+ }
+
+ .link a {
    color: #fbfcfb;
    text-decoration: none;
-}
-  .link a:hover{
+ }
+
+ .link a:hover {
    text-decoration: none;
 }
   /* Media Queries */
   @media screen and (max-width: 768px) {
     form {
-      width: 90%; 
+      width: 90%; /* Adjust the form width for smaller screens */
     }
   }
   
   @media screen and (max-width: 480px) {
     form {
-      width: 100%; 
+      width: 100%; /* Further adjust the form width for smaller screens */
     }
   
     label,
@@ -230,6 +257,4 @@ button:hover{
       font-size: 16px;
     }
   }
-  ::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-}  
+  
