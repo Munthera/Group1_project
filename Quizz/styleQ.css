@@ -6,9 +6,10 @@
 }
 body {
   height: 100vh;
-  background: linear-gradient(184deg,#8cbc8c,#87a687);
+  background: #ebeaea;
 }
 .start-screen {
+  
   position: absolute;
   top: 0;
   width: 100%;
@@ -18,16 +19,17 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .score-container {
-  justify-content: center;
   text-align: center;
   padding: 20px;
-  background-color: #fff;
+  background-color: #959B8C;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   max-width: 600px;
   margin: auto;
-  height: 100vh;
-    overflow: hidden;
+  height: auto;
+  overflow: auto;
+  
 }
 
 .score-container h2 {
@@ -51,17 +53,19 @@ body {
 
 .result-question-text {
   margin-top: 5px;
+  font-weight: bold;
 }
 
 .result-correct-answer {
   margin-top: 5px;
   font-weight: bold;
-  color: #339933;
+  color: #16b716;
 }
 
 .restart {
+  
   display: inline-block;
-  background-color: #339933;
+  background-color:#454D3B;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -74,23 +78,32 @@ body {
 .restart:hover {
   background-color: #267a26;
 }
+button:hover{
+
+  cursor: pointer;
+  transform:rotateX('angle');
+}
 button {
+  background-color: #a4a79f;
+  font-weight: 500;
+  color: #080707;
   border: none;
   outline: none;
   cursor: pointer;
+  
 }
 #start-button,
 #restart {
   font-size: 1.3em;
   padding: 0.5em 1.8em;
   border-radius: 0.2em;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 30px rgba(147, 145, 145, 0.4);
 }
 #restart {
   margin-top: 0.9em;
 }
 #display-container {
-  background-color: #ffffff;
+  background-color: #959B8C;
   padding: 3.1em 1.8em;
   width: 80%;
   max-width: 37.5em;
@@ -107,10 +120,10 @@ button {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 0.6em;
-  border-bottom: 0.1em solid #c0bfd2;
+  border-bottom: 0.1em solid #eeeef5;
 }
 .timer-div {
-  background-color: #e1f5fe;
+  background-color: #dededd;
   width: 7.5em;
   border-radius: 1.8em;
   display: flex;
@@ -121,49 +134,111 @@ button {
 .question {
   margin-bottom: 1.25em;
   font-weight: 600;
+  color: #eae9e9;
 }
 .option-div {
+  color: #212b18;
   font-size: 0.9em;
   width: 100%;
   padding: 1em;
   margin: 0.3em 0;
   text-align: left;
   outline: none;
-  background: transparent;
-  border: 1px solid #c0bfd2;
+  background: #eae9e9;
+  border: 1px solid #131511;
   border-radius: 0.3em;
 }
 .option-div:disabled {
-  color: #000000;
+  color: #212b18;
   cursor: not-allowed;
 }
 #next-button {
   font-size: 1em;
   margin-top: 1.5em;
-  background-color: #8754ff;
-  color: #ffffff;
+  background-color: #dededd;
+  color: #070606;
   padding: 0.7em 1.8em;
   border-radius: 0.3em;
   float: right;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%,50%);
+
 }
+#next-button{
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 0.3em;
+  
+}
+#next-button:focus{
+  outline: none;
+
+}
+
+/* Add regular button styles */
+#next-button{
+  background-color: #d3d3a7;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  /* Add transition for smooth animation */
+  transition: background-color 0.3s ease;
+}
+
+/* Add hover styles */
+button:hover {
+  background-color: #e1e1cd;
+  /* You can add more styles here to change the appearance on hover */
+}
+
+
+#next-button::before{
+  content: '';
+  display: block;
+  position: absolute;
+  background: #190404;
+  opacity: 0.5s;
+  filter: blur(30px);
+  transform: translateX(-130px) skewX(-150deg);
+}
+/* #next-button::after{
+  content: "";
+  position: absolute;
+  display: block;
+} */
+#next-button:hover{
+  background-color: #dededd;
+  cursor: pointer;
+  transition: 0.42s;
+}
+#next-button:hover::before{
+  transform: translateX(300px);
+}
+
+
+
 .hide {
   display: none;
 }
 .incorrect {
-  background-color: #ffdde0;
-  color: #d32f2f;
-  border-color: #d32f2f;
+  /* background-color: #e54754; */
+  /* color: #afd32f; */
+  border-color: #190404;
 }
 .correct {
-  background-color: #e7f6d5;
-  color: #689f38;
-  border-color: #689f38;
+  background-color: #bcc2b1;
+  color: #e8eae7;
+  border-color: #ffffff;
 }
 #user-score {
   font-size: 1.5em;
   color: #000000;
+  font-weight: bold;
 }
+
 
 /* Add these styles to your existing CSS */
 
@@ -172,7 +247,7 @@ button {
 
 /* Disable the "Next" button when it's disabled */
 #next-button[disabled] {
-background-color: #555;
-color: #888;
+background-color: #dededd;
+color: #0f0b0b;
 cursor: not-allowed;
 }

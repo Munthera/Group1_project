@@ -33,6 +33,7 @@ body.logged-in {
   width: 100px;
   height: 40px;
 }
+
 #LogOut:hover {
   background-color:#454D3B;
 }
@@ -92,23 +93,4 @@ body.logged-in {
   
 }}
 .hide {
-  display: none;
-}.main.slide-in {
-  animation: slideInFromRight 1s ease-in;
-}
-/* في ملف styles.css */
-
-/* حركة ظهور الصفحة الرئيسية بعد تسجيل الدخول */
-.main.fade-in {
-  animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
+  display: none;}

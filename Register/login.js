@@ -1,9 +1,8 @@
-// login.js
-
 // LOGIN FUNCTION
 function login() {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
+
     let error = document.getElementById('Error');
 
     let storedUserData = JSON.parse(localStorage.getItem('userData'));
@@ -22,8 +21,12 @@ function login() {
     }
 }
 
+
+
 // login btn navgate to homepage
-let buttonlogin = document.querySelector("#btnlogin");
+
+
+let buttonlogin = document.getElementById("btnlogin");
 let isloged = false;
 buttonlogin.addEventListener('click', (event) => {
     event.preventDefault();
@@ -31,6 +34,7 @@ buttonlogin.addEventListener('click', (event) => {
         isloged = false;
         console.log("Login failed.");
     } else {
+
         isloged = true;
         localStorage.setItem("isloged", JSON.stringify(isloged));
         console.log("login success");
