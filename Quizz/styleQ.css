@@ -53,18 +53,19 @@ body {
 
 .result-question-text {
   margin-top: 5px;
+  font-weight: bold;
 }
 
 .result-correct-answer {
   margin-top: 5px;
   font-weight: bold;
-  color: #050605;
+  color: #16b716;
 }
 
 .restart {
   
   display: inline-block;
-  background-color: #339933;
+  background-color:#454D3B;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -234,8 +235,10 @@ button:hover {
 }
 #user-score {
   font-size: 1.5em;
-  color: #d9d7d7;
+  color: #000000;
+  font-weight: bold;
 }
+
 
 /* Add these styles to your existing CSS */
 

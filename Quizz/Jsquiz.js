@@ -221,6 +221,9 @@ function displayResult()
         // Display the user score
         userScore.innerHTML =
             "Your score is " + scoreCount + " out of " + quizArray.length + " questions";
+      scoreCount >= 5
+        ? (userScore.style.color = "green")
+        : (userScore.style.color = "red");
 
         // Display the result page only if it hasn't been displayed before
         if (!resultDisplayed) {
