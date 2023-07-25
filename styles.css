@@ -7,6 +7,10 @@ body {
   background-color: #DBDBDB;
 }
 
+body.logged-in {
+  /* خلفية بعد تسجيل الدخول */
+  background-image: url('/1690267028116.jpg');
+}
 .main {
   margin-top: 10%;
   width: 40%;
@@ -18,7 +22,7 @@ body {
 }
 #buttonmain2,#buttonmain1,#startquiz,#LogOut{
   display:inline-block;
-  background-color:#838F79;
+  background-color:#73ff00;
   color:black;
   text-decoration:none;
   border: none;
@@ -30,7 +34,7 @@ body {
   height: 40px;
 }
 #LogOut:hover {
-  background-color:#454D3B;
+  background-color:#5eab00;
 }
 #startquiz:hover {
   background-color:#454D3B;
@@ -88,5 +92,4 @@ body {
   
 }}
 .hide {
-  display: none;
-}
+  display: none;}

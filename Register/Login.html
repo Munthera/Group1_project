@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Login</title>
-      <link rel="stylesheet" href="./login.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-   </head>
-   <body>
-      <div class="login-form">
-         <div class="text">
+<head>
+    <meta charset="utf-8">
+    <title>Quee.Log in</title>
+    <link rel="shortcut icon" href="../2023-07-23__3_-removebg-preview.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <div class="login-form">
+        <div class="text">
             LOGIN
-         </div>
-         <form >
+        </div>
+        <form>
             <div class="field">
-               <div class="fas fa-envelope"></div>
-               <input type="text" id="email" placeholder="Email or Phone">
+                <div class="fas fa-envelope"></div>
+                <input type="text" id="email" placeholder="Email or Phone">
             </div>
             <div class="field">
-               <div class="fas fa-lock"></div>
-               <input type="password" id="password" placeholder="Password">
+                <div class="fas fa-lock"></div>
+                <input type="password" id="password" placeholder="Password">
             </div>
             <div class="login-box">
-               <button id="btnlogin">Login</button>
-           </div>
-           
-           
-           
-            <div class="link">
-               Not a member?
-               <a href="./register.html"> Signup now</a>
+                <button id="btnlogin">Login</button>
             </div>
-         </form>
-      </div>
+            <span id="Error" class="error" style="color: brown;"></span><br>
+            <div class="link">
+                Not a member?
+                <a href="./register.html">Signup now</a>
+            </div>
+        </form>
+    </div>
 
-      <script src="./regJs.js"></script>
-   </body>
+    <script src="./login.js"></script>
+</body>
 </html>

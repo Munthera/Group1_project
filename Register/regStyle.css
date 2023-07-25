@@ -245,6 +245,7 @@
 
 
  /* Style for options */
+ #Error{color: brown;}
  .field select option {
    background-color: #555;
    color: #fff;

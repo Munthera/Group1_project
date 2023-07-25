@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form</title>
+    <title>Quee.Registrat</title>
+    <link rel="shortcut icon" href="./2023-07-23__3_-removebg-preview.png" type="image/x-icon" />
     <link rel="stylesheet" href="./regStyle.css">
 </head>
 <body>
-
-
     <div class="login-form">
-        <form >
+        <form>
             <h1>Registration Form</h1>
             <div class="field">
                 <label>First Name:</label>
@@ -20,7 +19,7 @@
             </div>
             <div class="field">
                 <label>Birth Date:</label>
-                <input type="date" id="birth_date" name="birth_date" required ><br><br>
+                <input type="date" id="birth_date" name="birth_date" required><br><br>
             </div>
             <div class="field">
                 <label>Mobile Number:</label>
@@ -44,20 +43,19 @@
             </div>
             <div class="field">
                 <label>Position:</label>
-
-                <select id="position" name="postion" required onclick="change()">
-
-                     <option value="">Select Postion</option> 
-                    <option value ="html" id="hgf">HTML</option>
+                <select id="position" name="postion" required>
+                    <option value="">Select Position</option>
+                    <option value="html">HTML</option>
                     <option value="css">CSS</option>
                     <option value="js">JavaScript</option>
                 </select>
-
+                <span id="Error" class="error"></span><br>
             </div>
-          <button onclick="checker()">Register</button>
+            <button id="reg">Register</button>
             <div class="link">
-                Already a member? <a href="./Login.html">Login in</a>
+                Already a member? <a href="./Login.html">Log in</a>
             </div>
+            
         </form>
     </div>
     <script src="./regJs.js"></script>

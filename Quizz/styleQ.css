@@ -21,8 +21,6 @@ body {
 }
 
 .score-container {
-  color: #faf5f5;
-  justify-content: center;
   text-align: center;
   padding: 20px;
   background-color: #959B8C;
@@ -30,6 +28,7 @@ body {
   max-width: 600px;
   margin: auto;
   height: auto;
+  overflow: auto;
   
 }
 
