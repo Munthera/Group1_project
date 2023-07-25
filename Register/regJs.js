@@ -82,6 +82,5 @@ registerBtn.addEventListener('click', function (event) {
     // If the form is valid, store the user data and show a success message
     
     localStorage.setItem("userData", JSON.stringify(userData));
-    alert("Registration successful");
     return true;
 });
