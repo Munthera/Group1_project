@@ -6,7 +6,7 @@
 }
 body {
   height: 100vh;
-  background: linear-gradient(184deg,#8cbc8c,#87a687);
+  background: linear-gradient(184deg,#ddd,#ddd);
 }
 .start-screen {
   position: absolute;
@@ -84,7 +84,8 @@ button {
   font-size: 1.3em;
   padding: 0.5em 1.8em;
   border-radius: 0.2em;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 30px #878e7d(0, 0, 0, 0.4);
+  background-color:#878e7d ;
 }
 #restart {
   margin-top: 0.9em;
