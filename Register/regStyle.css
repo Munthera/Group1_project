@@ -1,10 +1,13 @@
  * {
+
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-  }
+
+   }
   
   body {
+
     font-family: Arial, sans-serif;
     background: #E0E0E0;
     color: #fff;
@@ -21,33 +24,40 @@
 
    overflow: hidden;
    height: 100vh;
+
  }
 
  h1 {
+  
+  
+   color:#272727;
    justify-content: center;
    text-align: center;
    margin-top: -3%;
-   margin-left: 25%;
+   margin-left:32%;
    position: absolute;
+
    /* padding-top: 20px; */
 
   }
   
   form {
-    
+
     width: 75%;
-    height: 100vh;
-    margin: auto auto;
+    height: 95vh;
+    margin: 0 auto;
+    position: relative;
     box-sizing: border-box;
-    padding: 40px;
+    padding: 45px;
     overflow: hidden;
     background: #959B8C;
     border: 1px solid rgb(128, 119, 119);
-    border-radius: 8px;
+    border-radius: 8px ;
     box-shadow: inset 0 0 1px #272727;
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
   }
   
   .field {
@@ -58,21 +68,24 @@
   .field.f2 {
     width: 100%; 
   }
-  
+  ::-webkit-calendar-picker-indicator{
+    filter:invert(1);
+}
   .field input{
 
     height: 50px;
     width: 100%;
     outline: none;
     font-size: 19px;
-    color: #f5f0f0;
+    color: #171616;
     padding: 0 15px;
     border-radius: 0 5px 5px 0;
     border: 1px solid #444;
-    
-    width: 100%
+    width: 100%;
+
   }
   form button {
+
     height: 50px;
     width: 100%;
     outline: none;
@@ -84,6 +97,7 @@
     caret-color: #f9fff9;
     background: linear-gradient(#3f3f3f,#414040);
     width: 100%;
+
   }
   
   
@@ -102,17 +116,21 @@
    }
 
    100% {
+
      border-color: rgb(239, 245, 239);
      box-shadow: 0 0 20px rgba(240, 242, 240, 0.6),
        inset 0 0 10px rgba(242, 244, 242, 0.4);
    }
+
  }
 
  label {
+  
    display: block;
    margin-bottom: 5px;
    font-weight: bold;
-   color: #0f0e0e
+   color: #0f0e0e;
+
  }
 
 
@@ -129,6 +147,8 @@
    box-sizing: border-box;
    background-color: #555;
    background: #D8D8D6;
+
+
  }
 
  input[type="text"]:focus,
@@ -139,6 +159,7 @@
 
  input[type="password"]:focus,
  input[type="tel"]:focus {
+
    outline: none;
    color: #fff;
 
@@ -152,10 +173,12 @@
    cursor: pointer;
  }
 
- /* ::-webkit-calendar-picker-indicator {
-    filter: invert(2);
-} */
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+} 
+
  button:hover {
+
    color: #eef0ee;
    /* border: 1px solid #e1ede1; */
    box-shadow: 0 5PX 5px rgba(251, 251, 251, 0.3),
@@ -167,6 +190,7 @@
 
  /* selector */
  .field select {
+
    justify-content: center;
    font-weight: bold;
    letter-spacing: 0.1em;
@@ -178,6 +202,7 @@
    box-sizing: border-box;
    background: #D8D8D6;
    color: #959B8C;
+
  }
 
  .field select:focus {
