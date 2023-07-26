@@ -52,8 +52,8 @@ let buttonlogin = document.querySelector("#buttonmain1");
     if (userattempt == true){
         console.log(userattempt);
         startquiz.style.display = "none";
-        welc.textContent = "Welcome " + userData.FirstName + " " + "to Quee";
-        skill.textContent = `Thank you for taking our quiz we will contact you shortly .!`
+        welc.textContent = "Thank you " + userData.FirstName ;
+        skill.textContent = `Good luck.... ,We will contact you shortly .!`
       
     }
    LogOut.addEventListener('click', _ => {

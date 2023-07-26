@@ -80,7 +80,7 @@ registerBtn.addEventListener('click', function (event) {
     }
 
     // If the form is valid, store the user data and show a success message
-    
+    window.location.href="./Login.html"
     localStorage.setItem("userData", JSON.stringify(userData));
     return true;
 });

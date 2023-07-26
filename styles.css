@@ -57,7 +57,7 @@ body.logged-in {
 
 /* Responsive adjustments for buttons */
 
-@media (max-width: 700px) {
+@media (max-width: 700px) and (min-width:411){
   #buttonmain2, #btnlogin {
     font-size: 14px; /* Reduce font size for smaller screens */
     max-width: 150px; /* Adjust the button width for smaller screens */
@@ -73,7 +73,7 @@ body.logged-in {
   }
 }
 
-@media (max-width: 350px) and (min-width: 250px) {
+@media (max-width: 415px) and (min-width: 250px) {
   body {
     background-image: url(./1690117057871.jpg);
     background-repeat: no-repeat;
@@ -81,16 +81,47 @@ body.logged-in {
   }
 
   .main {
-    width: 250px;
+    width: 100%;
     margin-left: 20%;
-    margin-top: 100%;
+    margin-top: 80%;
   }
 
   #mainimg {
     margin-left: 10%;
     width: 100px;
-    margin-top: 20%;
+}
   
-}}
+ h3{
+    width: 95%;
+    }}
 .hide {
   display: none;}
+  @media (max-width: 811px){
+    .main{
+      width: 100%;
+    }
+  }
+  @media (max-width: 281px){
+    .main{
+      width: 100%;
+    }
+  }
+  
+@media (max-width: 539px) and (min-width: 720px) {
+  body {
+    background-image: url(./1690117057871.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .main {
+    width: 80%;
+    margin-left: 20%;
+    margin-top: 80%;
+  }
+
+  #mainimg {
+    margin-left: 10%;
+    width: 100px;
+}
+}
