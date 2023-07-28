@@ -104,7 +104,7 @@ button {
 }
 #display-container {
   background-color: #959B8C;
-  padding: 3.1em 1.8em;
+  padding: 3.1em 1.8em ;
   width: 80%;
   max-width: 37.5em;
   margin: 0 auto;
@@ -238,7 +238,6 @@ button:hover {
   color: #000000;
   font-weight: bold;
 }
-
 
 /* Add these styles to your existing CSS */
 

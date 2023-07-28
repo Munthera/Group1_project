@@ -49,7 +49,7 @@ let buttonlogin = document.querySelector("#buttonmain1");
         window.location.href = "./Quizz/quiz.html";
     });
     
-    if (userattempt == true){
+    if (userData.userattempt == true){
         console.log(userattempt);
         startquiz.style.display = "none";
         welc.textContent = "Welcome " + userData.FirstName + " " + "to Quee";

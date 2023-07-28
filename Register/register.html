@@ -11,7 +11,7 @@
             <h1>Registration Form</h1>
             <div class="field">
                 <label>First Name:</label>
-                <input type="text" id="first_name" name="first_name" required><br><br>
+                <input type="text" id="first_name" name="first_name" required><span class="error-msg" id="error-first-name"></span><br><br>
             </div>
             <div class="field">
                 <label>Last Name:</label>
@@ -19,15 +19,18 @@
             </div>
             <div class="field">
                 <label>Birth Date:</label>
-                <input type="date" id="birth_date" name="birth_date" required><br><br>
+                <input type="date" id="birth_date" name="birth_date" min="1970-01-01" max="2005-12-24" required>
+                <span class="error-msg" id="error-birth-date"></span><br><br>
             </div>
             <div class="field">
                 <label>Mobile Number:</label>
-                <input type="text" id="mobile_number" name="mobile_number" required><br><br>
+                <input type="text" id="mobile_number" name="mobile_number" required>
+                <span class="error-msg" id="error-mobile-number"></span><br><br>
             </div>
             <div class="field">
                 <label>Email:</label>
-                <input type="email" id="email" name="email" required><br>
+                <input type="email" id="email" name="email" required>
+                <span class="error-msg" id="error-email"><br>
             </div>
             <div class="field">
                 <label>Confirm Email:</label>
@@ -35,7 +38,8 @@
             </div>
             <div class="field">
                 <label>Password:</label>
-                <input type="password" id="password" name="password" required><br>
+                <input type="password" id="password" name="password" required>
+                <span class="error-msg" id="error-password"><br>
             </div>
             <div class="field">
                 <label>Confirm Password:</label>

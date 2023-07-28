@@ -13,7 +13,7 @@ registerBtn.addEventListener('click', function (event) {
 
     let firstName = document.getElementById("first_name").value;
     let lastName = document.getElementById("last_name").value;
-    let birthDate = document.getElementById("birth_date").value;
+    //let birthDate = document.getElementById("birth_date").value;
     let email = document.getElementById("email").value;
     let confirmEmail = document.getElementById("confirm_email").value;
     let password = document.getElementById("password").value;
@@ -26,32 +26,20 @@ registerBtn.addEventListener('click', function (event) {
     let birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
     let passwordRegex =
         /^(?=.*[A-Z])(?=.*\d{2,})(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,32}$/;
-    let mobileNumberRegex = /^\d{10}$/;
+    let mobileNumberRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     let error = document.getElementById("Error");
-    let userData = {
-        FirstName: firstName,
-        LastName: lastName,
-        BirthDate: birthDate,
-        Email: email,
-        Password: password,
-        MobileNumber: mobileNumber,
-        Position: position,
-    };
+
 
 
     //checking firstname
     if (!regexName.test(firstName) || !regexName.test(lastName)) {
-        error.textContent = "*First name and last name should contain only letters.";
+        document.getElementById("error-first-name").textContent = "*First name should contain only letters.";
         return false;
     }
     //check birth
-    if (!birthDateRegex.test(birthDate)) {
-        error.textContent = "*Invalid birth date format. use YYYY-mm-dd format";
-        return false;
-    }
-
+    
     // check email
     if (!emailRegex.test(email)) {
         error.textContent = "*Invalid email format.";
@@ -78,10 +66,36 @@ registerBtn.addEventListener('click', function (event) {
         error.textContent = "*Mobile number should contain exactly 10 digits.";
         return false;
     }
+    // date validate
+    let currentDate = new Date();
+    let birthDate = new Date(document.getElementById("birth_date").value);
+    let age = currentDate.getFullYear() - birthDate.getFullYear();
+    let birthMonth = birthDate.getMonth();
+    let currentMonth = currentDate.getMonth();
+    if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDate.getDate() < birthDate.getDate())) {
+        age--;
+    }
 
-    // If the form is valid, store the user data and show a success message
+    if (age < 18) {
+        document.getElementById("error-birth-date").textContent =  "*You must be at least 18 years old to register.";
+        return false;
+    }
+    
+   
+
+    let userData = {
+        FirstName: firstName,
+        LastName: lastName,
+        BirthDate: age,
+        Email: email,
+        Password: password,
+        MobileNumber: mobileNumber,
+        Position: position,
+        userattempt: null
+    };
+    //store the user data 
     
     localStorage.setItem("userData", JSON.stringify(userData));
-    alert("Registration successful");
+    window.location.href = "./Login.html"
     return true;
 });
