@@ -31,15 +31,15 @@ form.addEventListener('submit', function (event) {
 
   // 5. Password validation
   if (password !== confirmPassword) {
-	alert('Passwords do not match.');
 	return;
   }
 
   const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9]{2,})(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,32}$/;
   if (!passwordRegex.test(password)) {
-	alert('Password must start with a capital letter, have at least two numbers, one special character, and be 8-32 characters long');
+	
 	return;
   }
+  
 
   // 6. Mobile number validation
   // (The pattern attribute on the input element will handle this validation)
