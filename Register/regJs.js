@@ -16,7 +16,7 @@ form.addEventListener('submit', function (event) {
   const nameRegex = /^[A-Za-z]+$/;
   if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
 	
-	return;
+	return false;
   }
 
   // 2. Determine the birth date input and check for it in the right way
@@ -26,18 +26,22 @@ form.addEventListener('submit', function (event) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
 	
-	return;
+	return false;
   }
 
   // 5. Password validation
   if (password !== confirmPassword) {
-	return;
+	return false;
   }
 
   const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9]{2,})(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,32}$/;
   if (!passwordRegex.test(password)) {
 	
-	return;
+	return false;
+  }
+  let mobileregx = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
+  if (!mobileregx.test(mobileNumber)){
+    return false;
   }
   
 
