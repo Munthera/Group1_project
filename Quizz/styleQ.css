@@ -74,13 +74,14 @@ body {
 .result-correct-answer {
   margin-top: 5px;
   font-weight: bold;
-  color: #16b716;
+  color: #126712;
 }
 
 .restart  {
   
   display: inline-block;
   background-color:#454D3B;
+
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -302,6 +303,7 @@ button:hover {
   font-weight: bold;
 }
 
+
 /* Add these styles to your existing CSS */
 
 /* Style the correct option and "Next" button on hover */
@@ -312,6 +314,7 @@ button:hover {
 background-color: #dededd;
 color: #0f0b0b;
 cursor: not-allowed;
+
 }
 
 /* query */

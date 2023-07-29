@@ -219,6 +219,7 @@ else if (quizPosition === 'js'){
         options: ["for (i = 0; i <= 5; i++)","for (i <= 5; i++)","for (i = 0; i <= 5)","for i = 1 to 5"],
         correct: "for (i = 0; i <= 5; i++)",
        },
+
        {
         id: "8",
         question: "How do you declare a JavaScript variable?",
@@ -231,9 +232,7 @@ else if (quizPosition === 'js'){
         options: [`alert("Hello World");`,`msg("Hello World");`,`msgBox("Hello World");`,`alertBox("Hello World");`],
         correct: `alert("Hello World");`,
        }
-   
-   ];}
-
+    ];}
 //Restart Quiz
 restart.addEventListener("click", () => {
     initial();

@@ -1,101 +1,69 @@
-let registerBtn = document.querySelector("#reg");
+const form = document.getElementById('registrationForm');
 
-// Validating register form
-registerBtn.addEventListener('click', function (event) {
-    event.preventDefault();
-    let form = document.querySelector('form');
-    if (!form.checkValidity()) {
-        // إذا كان هناك حقول مطلوبة غير معبأة، عرض رسالة الخطأ وعدم تنفيذ الإجراء المتوقع
-        let error = document.getElementById("Error");
-        error.textContent = "*Please fill out all required fields.";
-        return false;
-    }
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
 
-    let firstName = document.getElementById("first_name").value;
-    let lastName = document.getElementById("last_name").value;
-    //let birthDate = document.getElementById("birth_date").value;
-    let email = document.getElementById("email").value;
-    let confirmEmail = document.getElementById("confirm_email").value;
-    let password = document.getElementById("password").value;
-    let confirmPassword = document.getElementById("confirm_password").value;
-    let mobileNumber = document.getElementById("mobile_number").value;
-    let position = document.getElementById("position").value;
+  const firstName = form.elements['firstName'].value;
+  const lastName = form.elements['lastName'].value;
+  const birthDate = form.elements['birthDate'].value;
+  const email = form.elements['email'].value;
+  const password = form.elements['password'].value;
+  const confirmPassword = form.elements['confirmPassword'].value;
+  const mobileNumber = form.elements['mobileNumber'].value;
+  const position=form.elements['position'].value;
 
-    // regex for inputs
-    let regexName = /^[A-Za-z]+$/;
-    let birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
-    let passwordRegex =
-        /^(?=.*[A-Z])(?=.*\d{2,})(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,32}$/;
-    let mobileNumberRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // 1. Check if the name has just letters.
+  const nameRegex = /^[A-Za-z]+$/;
+  if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
+	
+	return;
+  }
 
-    let error = document.getElementById("Error");
+  // 2. Determine the birth date input and check for it in the right way
+  // (You can add date validation here if required).
 
+  // 3. Check the email structure by regular expression and use error handling
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+	
+	return;
+  }
 
+  // 5. Password validation
+  if (password !== confirmPassword) {
+	return;
+  }
 
-    //checking firstname
-    if (!regexName.test(firstName) || !regexName.test(lastName)) {
-        document.getElementById("error-first-name").textContent = "*First name should contain only letters.";
-        return false;
-    }
-    //check birth
-    
-    // check email
-    if (!emailRegex.test(email)) {
-        error.textContent = "*Invalid email format.";
-        return false;
-    }
+  const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9]{2,})(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,32}$/;
+  if (!passwordRegex.test(password)) {
+	
+	return;
+  }
+  
 
-    //check email
-    if (email !== confirmEmail) {
-        error.textContent = "*Emails do not match.";
-        return false;
-    }
+  // 6. Mobile number validation
+  // (The pattern attribute on the input element will handle this validation)
 
-    if (!passwordRegex.test(password)) {
-        error.textContent = "*Password should start with a capital letter, contain at least two numbers, one special character, and be 8 to 32 characters long.";
-        return false;
-    }
+  // If all validations pass, you can proceed with the form submission here.
+  // For example, you can use AJAX to submit the form data to your server.
 
-    if (password !== confirmPassword) {
-        error.textContent = "*Passwords do not match.";
-        return false;
-    }
-
-    if (!mobileNumberRegex.test(mobileNumber)) {
-        error.textContent = "*Mobile number should contain exactly 10 digits.";
-        return false;
-    }
-    // date validate
-    let currentDate = new Date();
-    let birthDate = new Date(document.getElementById("birth_date").value);
-    let age = currentDate.getFullYear() - birthDate.getFullYear();
-    let birthMonth = birthDate.getMonth();
-    let currentMonth = currentDate.getMonth();
-    if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDate.getDate() < birthDate.getDate())) {
-        age--;
-    }
-
-    if (age < 18) {
-        document.getElementById("error-birth-date").textContent =  "*You must be at least 18 years old to register.";
-        return false;
-    }
-    
-   
-
-    let userData = {
-        FirstName: firstName,
-        LastName: lastName,
-        BirthDate: age,
-        Email: email,
-        Password: password,
-        MobileNumber: mobileNumber,
-        Position: position,
-        userattempt: null
-    };
-    //store the user data 
-    
-    localStorage.setItem("userData", JSON.stringify(userData));
-    window.location.href = "./Login.html"
-    return true;
-});
+ // Store the user data in localStorage
+ let userData = {
+	FirstName: firstName,
+	LastName: lastName,
+	BirthDate: birthDate,
+	Email: email,
+	Password: password,
+	MobileNumber: mobileNumber,
+	Position: position,
+	userattempt: null
+};
+  
+  // Convert the userData object to a JSON string and store it in localStorage
+  localStorage.setItem("userData", JSON.stringify(userData));
+  
+  // Reset the form after successful submission
+  form.reset();
+  
+  // Redirect to the login page
+  window.location.href = "./Login.html";})

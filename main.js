@@ -37,6 +37,7 @@ let buttonlogin = document.querySelector("#buttonmain1");
         startquiz.style.display = "inline-block";
         LogOut.style.display = "inline-block";
         document.body.classList.add('logged-in');
+        
         //writing on homepage
         welc.textContent = "Welcome " + userData.FirstName + " " + "to Quee";
         skill.textContent = `We are excited to discover your skills in(${userData.Position}),The exam comprises 10 questions, with only 3 minute for each response.!`
@@ -52,11 +53,11 @@ let buttonlogin = document.querySelector("#buttonmain1");
     if (userData.userattempt == true){
         console.log(userattempt);
         startquiz.style.display = "none";
-        welc.textContent = "Welcome " + userData.FirstName + " " + "to Quee";
-        skill.textContent = `Thank you for taking our quiz we will contact you shortly .!`
+        welc.textContent = "Thank you " + userData.FirstName ;
+        skill.textContent = `Good luck.... ,We will contact you shortly .!`
       
     }
    LogOut.addEventListener('click', _ => {
 
         window.location.href = "./index.html";})}
-        
+ 
