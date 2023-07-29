@@ -22,7 +22,7 @@ body.logged-in {
 }
 #buttonmain2,#buttonmain1,#startquiz,#LogOut{
   display:inline-block;
-  background-color:#838F79;
+  background-color:hsl(93, 9%, 52%);
   color:black;
   text-decoration:none;
   border: none;
@@ -32,21 +32,26 @@ body.logged-in {
   font-size: medium;
   width: 100px;
   height: 40px;
+  cursor: pointer;
 }
 
 #LogOut:hover {
   background-color:#454D3B;
+  color: #DBDBDB;
 }
 #startquiz:hover {
   background-color:#454D3B;
+  color: #DBDBDB;
 }
 #buttonmain2:hover {
   background-color:#454D3B;
+  color: #DBDBDB;
 }
 
 
 #buttonmain1:hover {
   background-color:#454D3B;
+  color: #DBDBDB;
 }
 
 /* It's better to group the hover and active states together */
@@ -57,23 +62,7 @@ body.logged-in {
 
 /* Responsive adjustments for buttons */
 
-@media (max-width: 700px) and (min-width:411){
-  #buttonmain2, #btnlogin {
-    font-size: 14px; /* Reduce font size for smaller screens */
-    max-width: 150px; /* Adjust the button width for smaller screens */
-    height: 35px; /* "PX" should be in lowercase */
-  }
-
-  .main {
-    margin-left: 30%;
-  }
-
-  #mainimg {
-    margin-left: -50%;
-  }
-}
-
-@media (max-width: 415px) and (min-width: 250px) {
+@media (max-width: 539px) and (min-width: 250px) {
   body {
     background-image: url(./1690117057871.jpg);
     background-repeat: no-repeat;
@@ -81,47 +70,41 @@ body.logged-in {
   }
 
   .main {
-    width: 100%;
-    margin-left: 20%;
-    margin-top: 80%;
-  }
+    margin-top: 100%;
+margin-left: .5%;  }
 
   #mainimg {
-    margin-left: 10%;
-    width: 100px;
+    margin-left: -5%;
+    width: 80px;
+    margin-top: -90%;
+    position: absolute;
 }
-  
- h3{
-    width: 95%;
-    }}
+ h3{width: 230%;
+text-align: left;}
+
+h1{width: 190%;
+background-color: #DBDBDB;
+margin-left: -6%; 
+}
+
+.but{display: flex;
+width: 120%;}
+}
+@media (max-width: 720px) and (min-width: 540px) {
+
+
+h1{width: 120%;}
+h3{width: 180%;}
+.but{display: flex;}
+
+}
+
+
 .hide {
   display: none;}
-  @media (max-width: 811px){
-    .main{
-      width: 100%;
+
+  @media (min-width: 450px) {
+    body {
+      line-height: 2; /* ارتفاع النص عندما يكون العرض أكبر من 450 بكسل */
     }
   }
-  @media (max-width: 281px){
-    .main{
-      width: 100%;
-    }
-  }
-  
-@media (max-width: 539px) and (min-width: 720px) {
-  body {
-    background-image: url(./1690117057871.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .main {
-    width: 80%;
-    margin-left: 20%;
-    margin-top: 80%;
-  }
-
-  #mainimg {
-    margin-left: 10%;
-    width: 100px;
-}
-}
