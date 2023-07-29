@@ -15,9 +15,9 @@
     height: 100vh;
     text-align: center;
     overflow: hidden;
+    display: flex;
     align-items: center;
     justify-content: center;
-
  }
 
  .login-form {
@@ -270,19 +270,25 @@
 /* Media Queries */
 @media screen and (max-width: 768px) {
   form {
-      width: 90%; 
-  }
-
-  .field {
-      width: 100%; 
-  }
-
-  h1 {
-      margin-left: 0;
-  }
+    
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-@media (min-width: 260px) and (max-width: 480px) {
+  .field {
+      
+      width: 100%;
+  }
+
+  form button {
+   
+      width: 100%;
+  }
+
+  
+}
+
+/* @media (min-width: 260px) and (max-width: 480px) {
   
   .login-form {
       width: 100%;
@@ -293,7 +299,7 @@
   }
 
   form .field select {
-      font-size: 13px; /* Adjust font size for select elements */
+      font-size: 13px; 
   }
 
   form .signup-link a {
@@ -305,9 +311,9 @@
   }
 
   h1 {
-      margin-left: 0; /* Center the heading on smaller screens */
+      margin-left: 0; 
   }
-}
+} */
 
   
 /*   

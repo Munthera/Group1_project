@@ -246,10 +246,12 @@ if (!userData.answers) {
 }
 
 
-//Restart Quiz
+//
 restart.addEventListener("click", () => {
     window.location.href='../index.html'
 });
+
+
 // Timer
 const startTimer = () => {
     count = totalTime;
@@ -375,45 +377,54 @@ function displayResult()
 
         // Display the result page only if it hasn't been displayed before
         if (!resultDisplayed) {
-            let resultContainer = document.createElement("div");
-            resultContainer.classList.add("result-container");
+            let table = document.createElement("table");
+            table.classList.add("result-table");
+        
+            // Table header
+            let headerRow = table.insertRow();
+            let questionHeader = headerRow.insertCell();
+            questionHeader.textContent = "Question";
+            let correctAnswerHeader = headerRow.insertCell();
+            correctAnswerHeader.textContent = "Correct Answer";
+            let userAnswerHeader = headerRow.insertCell();
+            userAnswerHeader.textContent = "Your Answer";
         
             for (let i = 0; i < quizArray.length; i++) {
-                let questionDiv = document.createElement("div");
-                questionDiv.classList.add("result-question");
+              let row = table.insertRow();
+              let questionCell = row.insertCell();
+              questionCell.textContent = quizArray[i].question;
+              questionCell.classList.add("question-text");
+              let correctAnswerCell = row.insertCell();
+              correctAnswerCell.textContent = quizArray[i].correct;
+              let userAnswerCell = row.insertCell();
+              userAnswerCell.textContent = quizArray[i].selected
+                ? quizArray[i].selected
+                : "Not Attempted";
         
-                let questionNumber = document.createElement("p");
-                questionNumber.classList.add("result-question-number");
-                questionNumber.innerText = "Question " + (i + 1) + ":";
-                questionDiv.appendChild(questionNumber);
-                
-                let questionText = document.createElement("p");
-                questionText.classList.add("result-question-text");
-                questionText.innerText = quizArray[i].question;
-                questionDiv.appendChild(questionText);
-                
-                let correctAnswer = document.createElement("p");
-                correctAnswer.classList.add("result-correct-answer");
-                correctAnswer.innerText = "Correct Answer: " + quizArray[i].correct;
-                questionDiv.appendChild(correctAnswer);
-                
-                // Display the user's selected answer
-                let selectedAnswer = document.createElement("p");
-                selectedAnswer.classList.add("result-selected-answer");
-                selectedAnswer.innerText =
-                    "Your Answer: " + (quizArray[i].selected ? quizArray[i].selected : "Not Attempted");
-                questionDiv.appendChild(selectedAnswer);
-        
-                resultContainer.appendChild(questionDiv);
+              // Highlight correct answers in green
+              if (quizArray[i].selected && quizArray[i].selected === quizArray[i].correct) {
+                userAnswerCell.style.color = "green";
+              } else {
+                userAnswerCell.style.color = "red";
+              }
             }
-            // reset timer
-            
-            scoreContainer.appendChild(resultContainer);
+        
+            // Append the table to the result container
+            scoreContainer.appendChild(table);
+        
+            // Reset timer
             resultDisplayed = true;
-            userData.userattempt=true;
+            userData.userattempt = true;
             localStorage.setItem("userData", JSON.stringify(userData));
-        }
+          }
     
+}
+// btn show result
+function showResult() {
+    // Show the result page if it's not already displayed
+    if (!resultDisplayed) {
+        displayResult();
+    }
 }
 nextBtn.addEventListener("click", () => {
     selectedOption = null;
@@ -432,7 +443,18 @@ nextBtn.addEventListener("click", () => {
     // Check if it's the last question
     if (questionCount == quizArray.length - 1) {
         // Hide the question container and display the score
-       displayResult();
+        displayContainer.classList.add("hide");
+        scoreContainer.classList.remove("hide");
+        userScore.innerHTML =
+        "Your score is " + scoreCount + " out of " + quizArray.length + " questions";
+             scoreCount >= 5
+                ? (userScore.style.color = "green")
+                : (userScore.style.color = "red");
+
+    //    displayResult();
+
+       // Show the Result button
+       document.getElementById("result-btn").style.display = "block";
         
     } else {
         // Clear the selected option before displaying the next question
@@ -466,21 +488,21 @@ function initial() {
 }
 
 // when user click on start button
-startButton.addEventListener("click", () => {
-    startScreen.classList.add("hide");
-    displayContainer.classList.remove("hide");
-    initial();
-});
+// startButton.addEventListener("click", () => {
+//     startScreen.classList.add("hide");
+//     displayContainer.classList.remove("hide");
+//     initial();
+// });
 
 
 //hide quiz and display start screen
-window.onload = () => {
-    startScreen.classList.remove("hide");
-    displayContainer.classList.add("hide");
-    nextBtn.disabled = true;
-};
+// window.onload = () => {
+//     startScreen.classList.remove("hide");
+//     displayContainer.classList.add("hide");
+//     nextBtn.disabled = true;
+// };
+//starter
+document.addEventListener('DOMContentLoaded',initial())
 
-
-// ------------------------------ main page
 
 
